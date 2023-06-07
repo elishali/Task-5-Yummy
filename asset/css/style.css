@@ -1,3 +1,7 @@
+header {
+  z-index: 100;
+}
+
 .navbar .collapse a,
 .navbar .collapse a:focus {
   display: flex;
@@ -11,34 +15,30 @@
   transition: 0.3s;
   position: relative;
 }
-
 .navbar .collapse > ul > li > a:before {
   content: "";
   position: absolute;
   width: 100%;
   height: 1px;
-  bottom: -6px;
+  bottom: -10px;
   left: 0;
   background-color: #ce1212;
   visibility: hidden;
   width: 0px;
   transition: all 0.3s ease-in-out 0s;
 }
-
 .navbar .collapse a:hover:before,
 .navbar .collapse li:hover > a:before,
 .navbar .collapse .active:before {
   visibility: visible;
   width: 100%;
 }
-
 .navbar .collapse a:hover,
 .navbar .collapse .active,
 .navbar .collapse .active:focus,
 .navbar .collapse li:hover > a {
   color: #000;
 }
-
 .navbar .dropdown ul {
   display: block;
   position: absolute;
@@ -54,36 +54,30 @@
   transition: 0.3s;
   border-radius: 4px;
 }
-
 .navbar .dropdown ul li {
   min-width: 200px;
 }
-
 .navbar .dropdown ul a {
   padding: 10px 20px;
   font-size: 17px;
   text-transform: none;
   font-weight: 600;
 }
-
 .navbar .dropdown ul a:hover,
 .navbar .dropdown ul .active:hover,
 .navbar .dropdown ul li:hover > a {
   color: #ce1212;
 }
-
 .navbar .dropdown:hover > ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
 }
-
 .navbar .dropdown .dropdown-menu ul {
   top: 0;
   left: calc(100% - 30px);
   visibility: hidden;
 }
-
 .navbar .dropdown .dropdown-menu:hover > ul {
   opacity: 1;
   top: 0;
@@ -93,33 +87,47 @@
 .nav-item {
   padding-left: 15px;
 }
+@media only screen and (max-width: 992px) {
+  .navbar-collapse {
+    order: 3;
+  }
+  .navbar .collapse > ul > li > a:before {
+    display: none;
+  }
+  .active::after,
+  .nav-item::after {
+    display: none;
+  }
+  .contact .ps-4,
+  .contact .pe-4 {
+    padding: 0 !important;
+  }
+}
 
-.title-enjoy {
+.banner {
+  background-color: #eeeeee;
+}
+.banner .title-enjoy {
   font-family: "Amatic SC", cursive;
   color: #303031;
   text-transform: uppercase;
   font-size: 40px;
 }
-.text-enjoy {
+.banner .text-enjoy {
   font-size: 17px;
   color: #4f4f5a;
 }
-.section-1 {
-  background-color: #eeeeee;
-}
 a:hover {
   color: #ce1212;
-  text-decoration: none;
 }
-.section-about h2 {
-  font-size: 13px;
+
+.about .section-about h2 {
+  font-size: 14px;
   letter-spacing: 1px;
   font-weight: 400;
-  color: #7f7f90;
-  text-transform: uppercase;
   text-align: center;
 }
-.section-about p {
+.about .section-about p {
   font-size: 48px;
   font-family: "Amatic SC", cursive;
   text-align: center;
@@ -127,19 +135,16 @@ a:hover {
 }
 .about-call-us {
   text-align: center;
-  width: 40%;
   height: 130px;
   background-color: white;
   bottom: 20%;
   left: 9%;
 }
 .about-call-us p {
-  margin-top: -30px;
   color: #ce1212;
   font-size: 25px;
   font-weight: 700;
 }
-
 .about .play-btn {
   width: 94px;
   height: 94px;
@@ -151,7 +156,6 @@ a:hover {
   top: calc(50% - 47px);
   overflow: hidden;
 }
-
 .about .play-btn:before {
   content: "";
   position: absolute;
@@ -169,7 +173,6 @@ a:hover {
   left: -15%;
   background: rgba(198, 16, 0, 0);
 }
-
 .about .play-btn:after {
   content: "";
   position: absolute;
@@ -184,7 +187,6 @@ a:hover {
   z-index: 150;
   transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
-
 .about .play-btn:hover:before {
   content: "";
   position: absolute;
@@ -201,8 +203,190 @@ a:hover {
   animation: none;
   border-radius: 0;
 }
-
 .about .play-btn:hover:after {
   border-left: 15px solid #ce1212;
   transform: scale(20);
+}
+
+.why-box {
+  background-color: #eeeeee;
+  padding: 50px 0px;
+}
+.why-box .why-choose {
+  background-color: #ce1212;
+  height: 420px;
+}
+.why-box .desc {
+  transition: all 0.4s ease-out 0s;
+  overflow: hidden;
+}
+.desc .desc-icon {
+  left: 36%;
+  position: relative;
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+}
+.why-box .desc:hover {
+  transform: scale(1.1);
+}
+
+.count {
+  font-family: "Inter", sans-serif;
+  background-image: url(../image/stats-bg.jpg);
+  background-attachment: fixed;
+  z-index: 100;
+}
+.count::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  opacity: 0.5;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+}
+
+.menu-title {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.menu .active,
+.menu li a:hover {
+  color: #ce1212 !important;
+}
+.menu .active::after {
+  display: none;
+}
+
+.testimonials {
+  background-color: #eeeeee;
+}
+.testimonials .desc-title {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.carousel-indicators button {
+  width: 10px !important;
+  height: 10px !important;
+}
+.carousel-indicators .active {
+  background-color: #ce1212 !important;
+}
+
+.events h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.events .item-desc {
+  font-size: 17px;
+}
+.events .carousel-inner .carousel-item.active,
+.events .carousel-inner .carousel-item-next,
+.events .carousel-inner .carousel-item-prev {
+  display: flex;
+}
+.events .carousel-item::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.events .card-body {
+  z-index: 10;
+}
+
+.chefs {
+  background-color: #eeeeee;
+}
+.chefs .card {
+  transition: 0.5s transform;
+}
+.chefs h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.chefs .card p {
+  font-size: 16px;
+  color: #4f4f5a;
+}
+.chef-icons {
+  transform: translateX(150%);
+  transition: 0.2s 0.2s !important;
+}
+.chefs .card:hover {
+  transform: scale(1.1);
+}
+.chefs .card:hover .chef-icons {
+  transform: translateX(0);
+}
+
+.book-form h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.book-form .bg-image {
+  background-color: #eeeeee;
+}
+.book-form .input-form input,
+.book-form .input-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+.book-form .input-form input:focus,
+.book-form .input-form textarea:focus {
+  border-color: #ce1212;
+}
+
+.gallery {
+  background-color: #eeeeee;
+}
+.gallery h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.gallery .carousel-inner .carousel-item.active,
+.gallery .carousel-inner .carousel-item-next,
+.gallery .carousel-inner .carousel-item-prev {
+  display: flex;
+}
+.gallery .card {
+  border-radius: 0;
+}
+
+.contact h2 {
+  font-family: "Amatic SC", cursive;
+  font-weight: normal;
+}
+.contact .bg-contact {
+  background-color: #eeeeee;
+}
+.contact .input-form input,
+.contact .input-form textarea {
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 14px;
+}
+.contact .input-form input:focus,
+.contact .input-form textarea:focus {
+  border-color: #ce1212;
+}
+
+footer p {
+  font-size: 14px;
+  color: #c5c5d0;
+}
+.copyright span {
+  font-size: 13px;
+  color: #c5c5d0;
+}
+.copyright a {
+  font-weight: 500;
 }
