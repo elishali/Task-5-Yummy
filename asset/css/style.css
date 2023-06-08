@@ -301,6 +301,20 @@ a:hover {
 .events .card-body {
   z-index: 10;
 }
+@media (min-width: 768px) {
+  .events .carousel-inner .carousel-item-end.active,
+  .events .carousel-inner .carousel-item-next {
+    transform: translateX(33%);
+  }
+  .events .carousel-inner .carousel-item-start.active,
+  .events .carousel-inner .carousel-item-prev {
+    transform: translateX(-33%);
+  }
+}
+.events .carousel-inner .carousel-item-end,
+.events .carousel-inner .carousel-item-start {
+  transform: translateX(0);
+}
 
 .chefs {
   background-color: #eeeeee;
@@ -359,6 +373,24 @@ a:hover {
 }
 .gallery .card {
   border-radius: 0;
+}
+.col-lg-2-5 {
+  flex: 0 0 auto;
+  width: 20%;
+}
+@media (min-width: 768px) {
+  .gallery .carousel-inner .carousel-item-end.active,
+  .gallery .carousel-inner .carousel-item-next {
+    transform: translateX(20%);
+  }
+  .gallery .carousel-inner .carousel-item-start.active,
+  .gallery .carousel-inner .carousel-item-prev {
+    transform: translateX(-20%);
+  }
+}
+.gallery .carousel-inner .carousel-item-end,
+.gallery .carousel-inner .carousel-item-start {
+  transform: translateX(0);
 }
 
 .contact h2 {
